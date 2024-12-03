@@ -1,0 +1,73 @@
+Name:
+Windows_Hub&Dock_Display_Stuttering
+
+Conditions:  
+1.Windows Platform 
+2.Use usb c hub or dock to connecting an extended screen and connecting to Ethernet and get power deilivery
+
+
+Problem:
+1.Display stuttering
+2.Feel stuck when draging the browser or file Explorer, It is very slow to move the window to the target position 
+3.Won't feel any lag when sliding the mouse pointer. Very smooth
+4.Use UFO Test and Advanced Display Option check the refresh rate is right.
+
+Use UsbTreeView to check the speed of USB Port, if the Hub's Speed is USB 2.0, then it match this reason:
+Reason:
+Usb Hub and Display Link is in the same USB 2.0 Hub, Insufficient bandwidth
+
+The wrong USB Tree View should be like this:
+[3-1-3]: VIA Labs USB 2.1 USB Hub
+|HS-[3-1-3-1]
+|HS-[3-1-3-2]
+|HS-[3-1-3-3]: DisplayLink Targus USB3 DV4K DOCK w PD100W - Audio, Net
+\HS-[3-1-3-4]
+
+
+Fix:
+Update software firmware，try anything you can after checking the cable and dock is OK
+
+The right USB Tree View should be like this
+[3-2-3]: VIA Labs USB 3.2 Gen 1 USB Hub
+|SS-[3-2-3-1]
+|SS-[3-2-3-2]
++SS-[3-2-3-3]: DisplayLink Targus USB3 DV4K DOCK w PD100W - Audio, Net
+\SS-[3-2-3-4]
+
+
+
+
+Chinese Version to help search:
+名称：
+Windows_Hub&Dock_Display_Stuttering
+
+条件：
+1.Windows 平台
+2.使用 USB C 集线器或底座连接扩展屏幕并连接到以太网并获得电源
+
+问题：
+1.显示卡顿
+2.拖动浏览器或文件资源管理器时感觉卡住，将窗口移动到目标位置非常慢
+3.滑动鼠标指针时不会感到任何滞后。非常流畅
+4.使用 UFO 测试和高级显示选项检查刷新率是否正确。
+
+使用 UsbTreeView 检查 USB 端口的速度，如果 Hub 的速度为 USB 2.0，则符合以下原因：
+原因：
+Usb Hub 和 Display Link 位于同一个 USB 2.0 Hub 中，带宽不足
+
+错误的 USB 树视图应如下所示：
+[3-1-3]：VIA Labs USB 2.1 USB Hub
+|HS-[3-1-3-1]
+|HS-[3-1-3-2]
+|HS-[3-1-3-3]：DisplayLink Targus USB3 DV4K DOCK w PD100W - Audio, Net
+\HS-[3-1-3-4]
+
+修复：
+更新软件固件，检查电缆和底座是否正常后，尝试任何可以尝试的方法
+
+正确的 USB 树视图应如下所示
+[3-2-3]：VIA Labs USB 3.2 Gen 1 USB Hub
+|SS-[3-2-3-1]
+|SS-[3-2-3-2]
++SS-[3-2-3-3]: DisplayLink Targus USB3 DV4K DOCK w PD100W - Audio, Net
+\SS-[3-2-3-4]
